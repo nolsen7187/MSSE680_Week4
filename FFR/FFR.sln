@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FFR", "FFR\FFR.csproj", "{1202D22F-DA29-4854-9BE5-D37492F54065}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FFR_Test", "FFR_Test\FFR_Test.csproj", "{BA9225BD-1FFC-450B-A27D-A48E7F3E6710}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{BB3D196C-E6EE-4277-8380-5A083C3FF3D6}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1202D22F-DA29-4854-9BE5-D37492F54065}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1202D22F-DA29-4854-9BE5-D37492F54065}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1202D22F-DA29-4854-9BE5-D37492F54065}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1202D22F-DA29-4854-9BE5-D37492F54065}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA9225BD-1FFC-450B-A27D-A48E7F3E6710}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA9225BD-1FFC-450B-A27D-A48E7F3E6710}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA9225BD-1FFC-450B-A27D-A48E7F3E6710}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA9225BD-1FFC-450B-A27D-A48E7F3E6710}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
