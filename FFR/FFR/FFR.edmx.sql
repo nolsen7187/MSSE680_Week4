@@ -55,7 +55,7 @@ GO
 
 -- Creating table 'Customers'
 CREATE TABLE [dbo].[Customers] (
-    [CustomerId] int  NOT NULL,
+    [CustomerId] [int] IDENTITY(1,1)  NOT NULL,
     [FirstName] varchar(50)  NULL,
     [LastName] varchar(50)  NULL,
     [Address] varchar(200)  NULL,
@@ -70,7 +70,7 @@ GO
 
 -- Creating table 'SalesHeaders'
 CREATE TABLE [dbo].[SalesHeaders] (
-    [SalesId] int  NOT NULL,
+    [SalesId] [int] IDENTITY(1,1)   NOT NULL,
     [CustomerId] int  NULL,
     [OrderSalesBalance] decimal(10,0)  NULL,
     [OrderTaxAmount] decimal(10,0)  NULL,
@@ -81,7 +81,7 @@ GO
 
 -- Creating table 'Employees'
 CREATE TABLE [dbo].[Employees] (
-    [EmployeeId] int  NOT NULL,
+    [EmployeeId] [int] IDENTITY(1,1)   NOT NULL,
     [EmployeeFirstName] varchar(50)  NULL,
     [EmployeeLastName] varchar(50)  NULL,
     [EmployeePhone] varchar(20)  NULL,
@@ -91,7 +91,7 @@ GO
 
 -- Creating table 'Items'
 CREATE TABLE [dbo].[Items] (
-    [ItemId] int  NOT NULL,
+    [ItemId] [int] IDENTITY(1,1)   NOT NULL,
     [ItemName] varchar(50)  NULL,
     [QuantityAvailable] int  NULL,
     [ItemCost] decimal(18,0)  NULL,
@@ -101,7 +101,7 @@ GO
 
 -- Creating table 'SalesItems'
 CREATE TABLE [dbo].[SalesItems] (
-    [SalesId] int  NOT NULL,
+    [SalesId] [int] IDENTITY(1,1)   NOT NULL,
     [ItemId] int  NOT NULL,
     [Qty] int  NULL,
     [Price] decimal(19,4)  NULL,
