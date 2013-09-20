@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Class.cs" />
     <Compile Include="Customer.cs">
       <DependentUpon>FFR.tt</DependentUpon>
     </Compile>
@@ -72,7 +72,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FFR.edmx</DependentUpon>
     </Compile>
-    <Compile Include="FFRFactoryClass.cs" />
+    <Compile Include="CustomerFactoryClass.cs" />
     <Compile Include="Item.cs">
       <DependentUpon>FFR.tt</DependentUpon>
     </Compile>

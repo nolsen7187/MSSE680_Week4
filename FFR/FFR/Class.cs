@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FFR
 {
-    public class Class1
+    public class Class
     {
     }
     namespace Domain

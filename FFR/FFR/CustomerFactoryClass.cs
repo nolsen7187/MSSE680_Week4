@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace FFR
 {
-    class FFRFactoryClass
+    public abstract class CustomerFactoryClass
     {
+        //test
     }
 }
