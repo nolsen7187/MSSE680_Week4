@@ -84,7 +84,9 @@
     <Compile Include="SalesItem.cs">
       <DependentUpon>FFR.tt</DependentUpon>
     </Compile>
-    <Compile Include="Service\CustomerNew.cs" />
+    <Compile Include="Service\Customer.cs" />
+    <Compile Include="Service\Employee.cs" />
+    <Compile Include="Service\Sales.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Business\" />

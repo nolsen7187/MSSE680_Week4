@@ -11,7 +11,8 @@ namespace FFR
 {
     using System;
     using System.Collections.Generic;
-    
+
+    [Serializable]
     public partial class Item
     {
         public Item()
