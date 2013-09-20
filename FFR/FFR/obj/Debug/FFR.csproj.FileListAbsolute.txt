@@ -13,4 +13,3 @@ C:\Users\nolsen\Source\Repos\MSSE680_Week4\FFR\FFR\bin\Debug\EntityFramework.dll
 C:\Users\nolsen\Source\Repos\MSSE680_Week4\FFR\FFR\bin\Debug\EntityFramework.xml
 C:\Users\nolsen\Source\Repos\MSSE680_Week4\FFR\FFR\obj\Debug\FFR.dll
 C:\Users\nolsen\Source\Repos\MSSE680_Week4\FFR\FFR\obj\Debug\FFR.pdb
-C:\Users\nolsen\Source\Repos\MSSE680_Week4\FFR\FFR\obj\Debug\FFR.csprojResolveAssemblyReference.cache

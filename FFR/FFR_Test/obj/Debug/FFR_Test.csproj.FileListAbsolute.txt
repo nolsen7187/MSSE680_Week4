@@ -8,6 +8,7 @@ C:\Users\nolsen\Source\Repos\MSSE680_Week3\FFR\FFR_Test\bin\Debug\EntityFramewor
 C:\Users\nolsen\Source\Repos\MSSE680_Week3\FFR\FFR_Test\obj\Debug\FFR_Test.csprojResolveAssemblyReference.cache
 C:\Users\nolsen\Source\Repos\MSSE680_Week3\FFR\FFR_Test\obj\Debug\FFR_Test.dll
 C:\Users\nolsen\Source\Repos\MSSE680_Week3\FFR\FFR_Test\obj\Debug\FFR_Test.pdb
+C:\Users\nolsen\Source\Repos\MSSE680_Week4\FFR\FFR_Test\obj\Debug\FFR_Test.csprojResolveAssemblyReference.cache
 C:\Users\nolsen\Source\Repos\MSSE680_Week4\FFR\FFR_Test\bin\Debug\FFR_Test.dll.config
 C:\Users\nolsen\Source\Repos\MSSE680_Week4\FFR\FFR_Test\bin\Debug\FFR_Test.dll
 C:\Users\nolsen\Source\Repos\MSSE680_Week4\FFR\FFR_Test\bin\Debug\FFR_Test.pdb
@@ -15,6 +16,5 @@ C:\Users\nolsen\Source\Repos\MSSE680_Week4\FFR\FFR_Test\bin\Debug\EntityFramewor
 C:\Users\nolsen\Source\Repos\MSSE680_Week4\FFR\FFR_Test\bin\Debug\FFR.dll
 C:\Users\nolsen\Source\Repos\MSSE680_Week4\FFR\FFR_Test\bin\Debug\FFR.pdb
 C:\Users\nolsen\Source\Repos\MSSE680_Week4\FFR\FFR_Test\bin\Debug\EntityFramework.xml
-C:\Users\nolsen\Source\Repos\MSSE680_Week4\FFR\FFR_Test\obj\Debug\FFR_Test.csprojResolveAssemblyReference.cache
 C:\Users\nolsen\Source\Repos\MSSE680_Week4\FFR\FFR_Test\obj\Debug\FFR_Test.dll
 C:\Users\nolsen\Source\Repos\MSSE680_Week4\FFR\FFR_Test\obj\Debug\FFR_Test.pdb

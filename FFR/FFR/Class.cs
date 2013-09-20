@@ -21,21 +21,4 @@ namespace FFR
     {
 
     }
-    namespace Service
-    {
-        public interface ICustomer
-        {
-            CustomerId customerId;
-            void CustomerNew();
-            void CustomerEdit();
-            void CustomerDelete();
-        }
-        public interface ISales
-        {
-            void SalesItemBrowse();
-            void SalesNew();
-            void SalesCheckOut();
-        }
-
-    }
 }

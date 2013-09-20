@@ -84,12 +84,12 @@
     <Compile Include="SalesItem.cs">
       <DependentUpon>FFR.tt</DependentUpon>
     </Compile>
+    <Compile Include="Service\CustomerNew.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Business\" />
     <Folder Include="Domain\" />
     <Folder Include="Presentation\" />
-    <Folder Include="Service\" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="FFR.edmx">
