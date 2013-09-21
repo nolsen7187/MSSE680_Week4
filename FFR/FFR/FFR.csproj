@@ -41,6 +41,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -56,7 +57,6 @@
     <Compile Include="Employee.cs">
       <DependentUpon>FFR.tt</DependentUpon>
     </Compile>
-    <Compile Include="FactoryClass.cs" />
     <Compile Include="FFR.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -72,7 +72,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FFR.edmx</DependentUpon>
     </Compile>
-    <Compile Include="CustomerFactoryClass.cs" />
+    <Compile Include="Service\CRUDRepositoryConcreteFactory.cs" />
+    <Compile Include="Service\CustomerFactoryClass.cs" />
     <Compile Include="Item.cs">
       <DependentUpon>FFR.tt</DependentUpon>
     </Compile>

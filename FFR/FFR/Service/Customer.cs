@@ -9,6 +9,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using System.Collections;
+using System.Runtime.Serialization.Formatters.Soap;
 
 
 namespace Services
@@ -80,12 +81,13 @@ namespace Services
             fileStream.Close();
             return customer;
         }
-       /* public Customer CustomerListWrite(ArrayList customers)
+        public ArrayList CustomerListWrite(ArrayList customers)
         {
             FileStream fileStream = new FileStream("Customers.bin", FileMode.Create, FileAccess.Write);
             IFormatter formatter = new BinaryFormatter();
             formatter.Serialize(fileStream, customers);
             fileStream.Close();
-        }*/
+            return customers;
+        }
     }
 }
