@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace FFR
 {
+
     public class Class
     {
     }
