@@ -92,7 +92,7 @@ namespace FFR_Test
             SalesHeader updateSalesHeader = (from d in ffrDb.SalesHeaders where d.SalesId == 2 select d).Single();
             updateSalesHeader.SalesStatus = "Record has been updated!";
             ffrDb.SaveChanges();
-        }*/
+        }
         [TestMethod]
         public void CreateCustomerUsingRepository()
         {
@@ -204,6 +204,6 @@ namespace FFR_Test
             //deleteItem.ItemId = 2;
             deleteItemRepo.Delete(deleteItem);
             deleteItemRepo.Dispose();
-        }
+        }*/
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FFR;
+using System.Reflection;
 
 namespace FFR.Service
 {
@@ -18,58 +19,104 @@ namespace FFR.Service
     //_repositoryType value 4 = SalesHeader
     //_repositoryType value 5 = Customer
 
-    class CRUDRepositoryConcreteFactory
+    public abstract class CRUDRepositoryConcreteFactory
     {
-    public static Boolean validActionType = false, 
-                          repostioryType = false;
+    public static Boolean globalActionType = false, 
+                          globalRepostioryType = false;
 
-        public static IDataRepository CRUD(int _actionType, string _repositoryType)
+    public static Type type;// = Type.GetType(_repositoryType);
+    public static Object classObjectLocallyDeclared;// = Activator.CreateInstance(type);
+    public static Class dynamicClass;
+
+   
+
+        public static IDataRepository CRUD(Int16 _actionType, String _repositoryType)
         {
             IDataRepository modifiedRepository;
+            //Validate Parameters being passed into Factory
+            ValidateParameters validParameters = new ValidateParameters();
 
-            modifiedRepository = new DataRepository<Customer>();
+            //Validating action type is set to a legit value.(CRUD)
+            validParameters.ValidateParameter(_actionType);
 
-            return modifiedRepository;
+            //Validating repository is set to a legit value.
+            validParameters.ValidateParameter(_repositoryType);
+
+            //If both parameters are true the application can process the request accordingly.
+            if (globalActionType && globalRepostioryType)
+            {
+               //dynamicClass =Activator.CreateInstance(
+                classObjectLocallyDeclared 
+                //modifiedRepository = (T)Activator.CreateInstance(Type.GetType(_repositoryType));
+                //type = Type.GetType(_repositoryType);
+                classObjectLocallyDeclared = Activator.CreateInstance(type);
+                switch (_actionType)
+                {
+                    case 1://Create
+                        modifiedRepository = new DataRepository<>();
+                        break;
+                    /*case 2://Read
+                        modifiedRepository = new DataRepository<Customer>();
+                        break;
+                    case 3://Update
+                        modifiedRepository = new DataRepository<Customer>();
+                        break;
+                    case 4://Delete
+                        modifiedRepository = new DataRepository<Customer>();
+                        break;*/
+                    default:
+                        modifiedRepository = new DataRepository<Customer>();
+                        break;
+                }
+                return modifiedRepository;
+            }
+            else
+            {
+            throw new System.ArgumentException("Invalid Parameters passed to CRUDRepositoryConcreteFactory/ValidateParameters class." );
+            }
         }
     }
+    //Valid parameters passed to this factory
     class ValidateParameters : CRUDRepositoryConcreteFactory
     {
-        public Boolean ValidateActionType(int _actionType)
+        public Boolean ValidateParameter(int _actionType)
         {
             if ((_actionType > 0) && (_actionType < 5))
             {
-                validActionType = true;             
+                globalActionType = true;             
             }
             else
-            {              
-                validActionType = false;
+            {
+                globalActionType = false;
+                throw new System.ArgumentException("Invalid Action type of {0} passed to CRUDRepositoryConcreteFactory/ValidateParameters class, ValidateActionType Method" + _actionType);
             }
-            return validActionType;
+            return globalActionType;
         }
-        public Boolean ValidateActionType(string _repositoryType)
+        public Boolean ValidateParameter(string _repositoryType)
         {
             switch (_repositoryType)
             {
                 case "Customer":
-                    repostioryType = true;
+                    globalRepostioryType = true;
                     break;
                 case "Item":
-                    repostioryType = true;
+                    globalRepostioryType = true;
                     break;
                 case "Employee":
-                    repostioryType = true;
+                    globalRepostioryType = true;
                     break;
                 case "SalesHeader":
-                    repostioryType = true;
+                    globalRepostioryType = true;
                     break;
                 case "SalesItem":
-                    repostioryType = true;
+                    globalRepostioryType = true;
                     break;
                 default:
-                    repostioryType = false;
+                    globalRepostioryType = false;
                     throw new System.ArgumentException("Invalid Repository type of {0} passed to CRUDRepositoryConcreteFactory/ValidateParameters class, ValidateActionType Method" + _repositoryType);
             }
-            return repostioryType;
+            return globalRepostioryType;
         }
     }
+
 }

@@ -73,7 +73,6 @@
       <DependentUpon>FFR.edmx</DependentUpon>
     </Compile>
     <Compile Include="Service\CRUDRepositoryConcreteFactory.cs" />
-    <Compile Include="Service\CustomerFactoryClass.cs" />
     <Compile Include="Item.cs">
       <DependentUpon>FFR.tt</DependentUpon>
     </Compile>
@@ -85,9 +84,8 @@
     <Compile Include="SalesItem.cs">
       <DependentUpon>FFR.tt</DependentUpon>
     </Compile>
-    <Compile Include="Service\Customer.cs" />
-    <Compile Include="Service\Employee.cs" />
-    <Compile Include="Service\Sales.cs" />
+    <Compile Include="Service\CustomeInterfaceTestNotUsedr.cs" />
+    <Compile Include="Service\EmployeeInterfaceTestNotUsed.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Business\" />
