@@ -10,9 +10,9 @@ namespace ServiceTest
         [TestMethod]
         public void UseCRUDFactoryPassingInActionAndRepositoryType()
         {
-            var customerRepo = FFR.Service.CRUDRepositoryConcreteFactory.CRUD(1, "Customer");          
 
-            Customer createCustomer = new Customer();
+
+            Customer createCustomer = Activator.CreateInstance<Customer>();
             createCustomer.CustomerId = 2;
             createCustomer.FirstName = "Nick";
             createCustomer.LastName = "Olsen";
@@ -23,7 +23,25 @@ namespace ServiceTest
             createCustomer.Phone = "303-949-2695";
             createCustomer.Email = "jolsen@hotmail.com";
 
-            customerRepo.Create(createCustomer);
+            var customerRepo = FFR.Service.CRUDRepositoryConcreteFactory.CRUD<Customer>();
+
+            switch (1)
+            {
+                case 1://Create
+                    customerRepo.Create(createCustomer);// = new DataRepository<Customer>();
+                    break;
+                case 2://Update
+                    customerRepo.Update(createCustomer);
+                    break;
+                case 3://Delete
+                    customerRepo.Delete(createCustomer);
+                    break;
+                default:
+                    modifiedRepository = new DataRepository<Customer>();
+                    break;
+            }
+
+            //customerRepo.Create(createCustomer);
 
 
             Console.WriteLine("Yeah Buddy");

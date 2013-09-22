@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Linq.Expressions;
-using System.Data.Entity;
 using System.Configuration;
+using System.Data.Entity;
+using System.Linq;
+using System.Linq.Expressions;
+
 namespace FFR
 {
     /// V1 Week 4
@@ -20,8 +19,8 @@ namespace FFR
         //Set _dbContext variable to the dbContext based on the FFREntities for this project
         public DataRepository()
         {
-            //_dbContext = new DbContext(ConfigurationManager.ConnectionStrings["FFREntities"].ConnectionString);
-            _dbContext = new DbContext("data source=.;initial catalog=FFR;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
+            _dbContext = new DbContext(ConfigurationManager.ConnectionStrings["FFREntities"].ConnectionString);
+            //_dbContext = new DbContext("data source=.;initial catalog=FFR;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
         }
         public void Dispose()
         {

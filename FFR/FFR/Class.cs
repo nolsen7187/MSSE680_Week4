@@ -1,15 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
+using System;
 namespace FFR
 {
 
-    public class Class
+    public class CTest
     {
+        public CTest() { }
+
+        public void TestMethod()
+        {
+            Activator.CreateInstance<CTest>();
+        }
+
+
+
     }
+
+
     namespace Domain
     {
 
