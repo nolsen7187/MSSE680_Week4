@@ -20,7 +20,8 @@ namespace FFR
         //Set _dbContext variable to the dbContext based on the FFREntities for this project
         public DataRepository()
         {
-            _dbContext = new DbContext(ConfigurationManager.ConnectionStrings["FFREntities"].ConnectionString);
+            //_dbContext = new DbContext(ConfigurationManager.ConnectionStrings["FFREntities"].ConnectionString);
+            _dbContext = new DbContext("data source=.;initial catalog=FFR;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
         }
         public void Dispose()
         {

@@ -55,7 +55,7 @@ GO
 
 -- Creating table 'Customers'
 CREATE TABLE [dbo].[Customers] (
-    [CustomerId] [int] IDENTITY(1,1)  NOT NULL,
+    [CustomerId] [int] NOT NULL,
     [FirstName] varchar(50)  NULL,
     [LastName] varchar(50)  NULL,
     [Address] varchar(200)  NULL,

@@ -46,16 +46,16 @@ namespace FFR.Service
             if (globalActionType && globalRepostioryType)
             {
                //dynamicClass =Activator.CreateInstance(
-                classObjectLocallyDeclared 
+                //classObjectLocallyDeclared 
                 //modifiedRepository = (T)Activator.CreateInstance(Type.GetType(_repositoryType));
                 //type = Type.GetType(_repositoryType);
-                classObjectLocallyDeclared = Activator.CreateInstance(type);
+                //classObjectLocallyDeclared = Activator.CreateInstance(type);
                 switch (_actionType)
                 {
                     case 1://Create
-                        modifiedRepository = new DataRepository<>();
+                        modifiedRepository = new DataRepository<Customer>();                     
                         break;
-                    /*case 2://Read
+                    case 2://Read
                         modifiedRepository = new DataRepository<Customer>();
                         break;
                     case 3://Update
@@ -63,7 +63,7 @@ namespace FFR.Service
                         break;
                     case 4://Delete
                         modifiedRepository = new DataRepository<Customer>();
-                        break;*/
+                        break;
                     default:
                         modifiedRepository = new DataRepository<Customer>();
                         break;

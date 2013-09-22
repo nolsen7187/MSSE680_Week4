@@ -99,6 +99,7 @@ namespace FFR_Test
             var customerRepo = new DataRepository<Customer>();
 
             Customer createCustomer = new Customer();
+            createCustomer.CustomerId = 1;
             createCustomer.FirstName = "Jackie";
             createCustomer.LastName = "Olsen";
             createCustomer.Address = "11320 Lovage Way";
@@ -109,8 +110,8 @@ namespace FFR_Test
             createCustomer.Email = "jolsen@hotmail.com";
 
             customerRepo.Create(createCustomer);
-        }
-        
+        }*/
+        /*
         [TestMethod]
         public void CreateItemUsingRepository()
         {

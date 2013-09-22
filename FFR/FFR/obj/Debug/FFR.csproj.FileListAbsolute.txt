@@ -13,3 +13,10 @@ C:\Users\NOLSEN\Source\Repos\MSSE680_Week4\FFR\FFR\bin\Debug\EntityFramework.dll
 C:\Users\NOLSEN\Source\Repos\MSSE680_Week4\FFR\FFR\bin\Debug\EntityFramework.xml
 C:\Users\NOLSEN\Source\Repos\MSSE680_Week4\FFR\FFR\obj\Debug\FFR.dll
 C:\Users\NOLSEN\Source\Repos\MSSE680_Week4\FFR\FFR\obj\Debug\FFR.pdb
+C:\Users\NOLSEN\Source\Repos\MSSE680_Week4_Working\FFR\FFR\bin\Debug\FFR.dll.config
+C:\Users\NOLSEN\Source\Repos\MSSE680_Week4_Working\FFR\FFR\bin\Debug\FFR.dll
+C:\Users\NOLSEN\Source\Repos\MSSE680_Week4_Working\FFR\FFR\bin\Debug\FFR.pdb
+C:\Users\NOLSEN\Source\Repos\MSSE680_Week4_Working\FFR\FFR\bin\Debug\EntityFramework.dll
+C:\Users\NOLSEN\Source\Repos\MSSE680_Week4_Working\FFR\FFR\bin\Debug\EntityFramework.xml
+C:\Users\NOLSEN\Source\Repos\MSSE680_Week4_Working\FFR\FFR\obj\Debug\FFR.dll
+C:\Users\NOLSEN\Source\Repos\MSSE680_Week4_Working\FFR\FFR\obj\Debug\FFR.pdb
