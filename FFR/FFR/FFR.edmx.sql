@@ -5,7 +5,7 @@
 -- Date Created: 09/22/2013 21:54:50
 -- Generated from EDMX file: C:\Users\NOLSEN\Source\Repos\MSSE680_Week4_Working\FFR\FFR\FFR.edmx
 -- --------------------------------------------------
-CREATE DATABASE FFR;
+IF OBJECT_ID(N'FFR', N'U') IS NULL CREATE DATABASE FFR;
 
 SET QUOTED_IDENTIFIER OFF;
 GO
