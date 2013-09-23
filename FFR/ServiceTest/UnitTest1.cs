@@ -1,6 +1,13 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FFR;
+using System.Linq;
+using System.Collections.Generic;
+using System.Data;
+using System.Collections;
+using System.Data.Entity;
+using System.Configuration;
+using System.Linq.Expressions;
 
 namespace ServiceTest
 {
@@ -8,9 +15,17 @@ namespace ServiceTest
     public class UnitTest1
     {
         [TestMethod]
-        public void UseCRUDFactoryPassingInActionAndRepositoryType()
+        public void UseCRUDFactoryRetrieveUsingRepository()
         {
+            var customerRepo = FFR.Service.CRUDRepositoryConcreteFactory.CRUD<Customer>();
 
+            List<Customer> customerList = customerRepo.GetAll().ToList<Customer>();
+            Assert.IsTrue(customerList.Count > 0);
+        }
+        [TestMethod]
+        public void UseCRUDFactoryandReturnARepositoryandCreateCustomer()
+        {
+            Int16 actionType = 1;
 
             Customer createCustomer = Activator.CreateInstance<Customer>();
             createCustomer.CustomerId = 2;
@@ -22,10 +37,10 @@ namespace ServiceTest
             createCustomer.Zip = "80134";
             createCustomer.Phone = "303-949-2695";
             createCustomer.Email = "jolsen@hotmail.com";
-
+            //Factory Return Repository
             var customerRepo = FFR.Service.CRUDRepositoryConcreteFactory.CRUD<Customer>();
-
-            switch (1)
+            //Simulating the business logic that would ultimately be getting called from a controller in the manner it would be called.
+            switch (actionType)
             {
                 case 1://Create
                     customerRepo.Create(createCustomer);// = new DataRepository<Customer>();
@@ -37,15 +52,87 @@ namespace ServiceTest
                     customerRepo.Delete(createCustomer);
                     break;
                 default:
-                    modifiedRepository = new DataRepository<Customer>();
+                    customerRepo = new DataRepository<Customer>();
+                    //Assert.AreEqual(savedCustomer.CustomerId, 1);
+                    break;
+            } //customerRepo.Create(createCustomer);
+           // Console.WriteLine("Yeah Buddy");            
+        }
+        [TestMethod]
+        public void UseCRUDFactoryandReturnARepositoryandUpdateItem()
+        {
+            Int16 actionType = 2;
+
+            Item createItem = Activator.CreateInstance<Item>();
+            createItem.ItemName = "FP Gray Turbo";
+            createItem.Price = 1200;
+            createItem.ItemCost = 550;
+            createItem.ItemId = 2;
+            var itemRepo = FFR.Service.CRUDRepositoryConcreteFactory.CRUD<Item>();
+
+            itemRepo.Create(createItem);
+
+            var deleteItemRepo = FFR.Service.CRUDRepositoryConcreteFactory.CRUD<Item>();
+            Item deleteItem = (from d in deleteItemRepo.GetAll() where d.ItemId == 2 select d).Single();
+
+            switch (actionType)
+            {
+                case 1://Create
+                    deleteItemRepo.Create(deleteItem);// = new DataRepository<Customer>();
+                    break;
+                case 2://Update
+                    deleteItemRepo.Update(deleteItem);
+                    break;
+                case 3://Delete
+                    deleteItemRepo.Delete(deleteItem);
+                    break;
+                default:
+                    deleteItemRepo = new DataRepository<Item>();
+                    //Assert.AreEqual(savedCustomer.CustomerId, 1);
                     break;
             }
+        }
+        [TestMethod]
+        public void UseCRUDFactoryandReturnARepositoryandDeleteItem()
+        {
+            Int16 actionType = 3;
 
-            //customerRepo.Create(createCustomer);
+            Item createItem = Activator.CreateInstance<Item>();
+            createItem.ItemName = "FP Gray Turbo";
+            createItem.Price = 1200;
+            createItem.ItemCost = 550;
+            createItem.ItemId = 2;
+            var itemRepo = FFR.Service.CRUDRepositoryConcreteFactory.CRUD<Item>();
 
+            itemRepo.Create(createItem);
 
-            Console.WriteLine("Yeah Buddy");
-            
+            var deleteItemRepo = FFR.Service.CRUDRepositoryConcreteFactory.CRUD<Item>();
+            Item deleteItem = (from d in deleteItemRepo.GetAll() where d.ItemId == 2 select d).Single();
+
+            switch (actionType)
+            {
+                case 1://Create
+                    deleteItemRepo.Create(deleteItem);// = new DataRepository<Customer>();
+                    break;
+                case 2://Update
+                    deleteItemRepo.Update(deleteItem);
+                    break;
+                case 3://Delete
+                    deleteItemRepo.Delete(deleteItem);
+                    break;
+                default:
+                    deleteItemRepo = new DataRepository<Item>();
+                    //Assert.AreEqual(savedCustomer.CustomerId, 1);
+                    break;
+            } 
+        }
+        [TestMethod]
+        public void RetrieveUsingRepository()
+        {
+            var customerRepo = new DataRepository<Customer>();
+
+            List<Customer> customerList = customerRepo.GetAll().ToList<Customer>();
+            Assert.IsTrue(customerList.Count > 0);
         }
     }
 }

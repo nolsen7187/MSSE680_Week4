@@ -21,20 +21,27 @@ namespace FFR.Service
 
     public abstract class CRUDRepositoryConcreteFactory
     {
-        public static Boolean _globalActionType = false,
-                              _globalRepostioryType = false;
+        //public static Boolean _globalActionType = false,
+        //                      _globalRepostioryType = false;
 
-        public static Type _type;// = Type.GetType(_repositoryType);
-        public static Object _classObjectLocallyDeclared;// = Activator.CreateInstance(type);
+        //public static Type _type;// = Type.GetType(_repositoryType);
+        //public static Object _classObjectLocallyDeclared;// = Activator.CreateInstance(type);
         //public static Class dynamicClass;
 
 
 
-        public static IDataRepository CRUD<T>() where T: class
+        //public static IDataRepository CRUD<T>() where T: class
+        public static IDataRepository CRUD<T>() where T : class
         {
-            IDataRepository modifiedRepository;
+            IDataRepository modifiedRepository = Activator.CreateInstance<DataRepository<T>>();
+            return modifiedRepository;
+        }
+
+    }
+}
+            //modifiedRepository = Activator.CreateInstance<DataRepository<T>>();
             //Validate Parameters being passed into Factory
-            ValidateParameters validParameters = new ValidateParameters();
+            //ValidateParameters validParameters = new ValidateParameters();
 
             //Validating action type is set to a legit value.(CRUD)
           //  validParameters.ValidateParameter(_actionType);
@@ -43,11 +50,18 @@ namespace FFR.Service
            // validParameters.ValidateParameter(_repositoryType);
 
             //If both parameters are true the application can process the request accordingly.
-            if (_globalActionType )//&& _globalRepostioryType)
-            {
+           //if (_globalActionType )//&& _globalRepostioryType)
+            //{
 
-                modifiedRepository = Activator.CreateInstance<DataRepository<T>>();
-
+ //               modifiedRepository = Activator.CreateInstance<DataRepository<T>>();
+//                if(modifiedRepository.)
+//                {
+//                return modifiedRepository;
+//                }
+//                else
+ //               {
+   //             throw new System.ArgumentException("No repository found based on the caller passed to the CRUDRepositoryConcreteFactory/CRUD method.");
+     //           }
                 //Type type = cust.GetType();
 
                // modifiedRepository = new DataRepository<T>(); 
@@ -78,15 +92,9 @@ namespace FFR.Service
                         break;
                 }*/
 
-                return modifiedRepository;
-            }
-            else
-            {
-                throw new System.ArgumentException("Invalid Parameters passed to CRUDRepositoryConcreteFactory/ValidateParameters class.");
-            }
-        }
-    }
-    //Valid parameters passed to this factory
+
+
+   /* //Valid parameters passed to this factory
     class ValidateParameters : CRUDRepositoryConcreteFactory
     {
         public Boolean ValidateParameter(Int16 _actionType)
@@ -110,7 +118,7 @@ namespace FFR.Service
             else
                 throw new ArgumentException("Invalid Repository type of {0} passed to CRUDRepositoryConcreteFactory/ValidateParameters class, ValidateActionType Method" + _repositoryType);
 
-            /*switch (_repositoryType)
+            switch (_repositoryType)
             {
                 case "Customer":
                     globalRepostioryType = true;
@@ -130,7 +138,8 @@ namespace FFR.Service
                 default:
                     globalRepostioryType = false;
                     throw new System.ArgumentException("Invalid Repository type of {0} passed to CRUDRepositoryConcreteFactory/ValidateParameters class, ValidateActionType Method" + _repositoryType);
-            }*/
+            }
         }
     }
 }
+*/
