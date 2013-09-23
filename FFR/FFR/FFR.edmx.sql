@@ -2,11 +2,10 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 09/15/2013 22:16:42
--- Generated from EDMX file: C:\Users\NOLSEN\Source\Repos\MSSE680_Week3\FFR\FFR\FFR.edmx
+-- Date Created: 09/22/2013 21:54:50
+-- Generated from EDMX file: C:\Users\NOLSEN\Source\Repos\MSSE680_Week4_Working\FFR\FFR\FFR.edmx
 -- --------------------------------------------------
-
-IF OBJECT_ID(N'FFR', N'U') IS NULL CREATE DATABASE FFR;
+CREATE DATABASE FFR;
 
 SET QUOTED_IDENTIFIER OFF;
 GO
@@ -36,14 +35,14 @@ GO
 IF OBJECT_ID(N'[dbo].[Customers]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Customers];
 GO
+IF OBJECT_ID(N'[dbo].[SalesHeaders]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SalesHeaders];
+GO
 IF OBJECT_ID(N'[dbo].[Employees]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Employees];
 GO
 IF OBJECT_ID(N'[dbo].[Items]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Items];
-GO
-IF OBJECT_ID(N'[dbo].[SalesHeaders]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[SalesHeaders];
 GO
 IF OBJECT_ID(N'[dbo].[SalesItems]', 'U') IS NOT NULL
     DROP TABLE [dbo].[SalesItems];
@@ -55,7 +54,7 @@ GO
 
 -- Creating table 'Customers'
 CREATE TABLE [dbo].[Customers] (
-    [CustomerId] [int] NOT NULL,
+    [CustomerId] int  NOT NULL,
     [FirstName] varchar(50)  NULL,
     [LastName] varchar(50)  NULL,
     [Address] varchar(200)  NULL,
@@ -70,7 +69,7 @@ GO
 
 -- Creating table 'SalesHeaders'
 CREATE TABLE [dbo].[SalesHeaders] (
-    [SalesId] [int] IDENTITY(1,1)   NOT NULL,
+    [SalesId] int  NOT NULL,
     [CustomerId] int  NULL,
     [OrderSalesBalance] decimal(10,0)  NULL,
     [OrderTaxAmount] decimal(10,0)  NULL,
@@ -81,7 +80,7 @@ GO
 
 -- Creating table 'Employees'
 CREATE TABLE [dbo].[Employees] (
-    [EmployeeId] [int] IDENTITY(1,1)   NOT NULL,
+    [EmployeeId] int  NOT NULL,
     [EmployeeFirstName] varchar(50)  NULL,
     [EmployeeLastName] varchar(50)  NULL,
     [EmployeePhone] varchar(20)  NULL,
@@ -91,7 +90,7 @@ GO
 
 -- Creating table 'Items'
 CREATE TABLE [dbo].[Items] (
-    [ItemId] [int] IDENTITY(1,1)   NOT NULL,
+    [ItemId] int  NOT NULL,
     [ItemName] varchar(50)  NULL,
     [QuantityAvailable] int  NULL,
     [ItemCost] decimal(18,0)  NULL,
@@ -101,7 +100,7 @@ GO
 
 -- Creating table 'SalesItems'
 CREATE TABLE [dbo].[SalesItems] (
-    [SalesId] [int] IDENTITY(1,1)   NOT NULL,
+    [SalesId] int  NOT NULL,
     [ItemId] int  NOT NULL,
     [Qty] int  NULL,
     [Price] decimal(19,4)  NULL,

@@ -11,9 +11,7 @@ namespace FFR
 {
     using System;
     using System.Collections.Generic;
-
-    //Added to make domain objects be serializable
-    [Serializable]
+    
     public partial class SalesHeader
     {
         public int SalesId { get; set; }

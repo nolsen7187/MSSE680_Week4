@@ -31,9 +31,9 @@ namespace FFR.Service
 
 
         //public static IDataRepository CRUD<T>() where T: class
-        public static IDataRepository CRUD<T>() where T : class
+        public static DataRepository<T> CRUD<T>() where T : class
         {
-            IDataRepository modifiedRepository = Activator.CreateInstance<DataRepository<T>>();
+            DataRepository<T> modifiedRepository = Activator.CreateInstance<DataRepository<T>>();
             return modifiedRepository;
         }
 
